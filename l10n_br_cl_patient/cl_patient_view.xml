@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_cl_patient_tree_l10n_br">
+            <field name="name">cl_patient.tree</field>
+            <field name="model">cl_patient</field>
+            <field name="inherit_id" ref="cl_patient.view_cl_patient_tree"/>
+            <field name="arch" type="xml">
+                <field name="patient_code" position="after">
+                    <field name="cpf"/>
+                    <field name="rg"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_cl_patient_form_l10n_br">
+            <field name="name">cl_patient.form</field>
+            <field name="model">cl_patient</field>
+            <field name="inherit_id" ref="cl_patient.view_cl_patient_form"/>
+            <field name="arch" type="xml">
+                <field name="identification_id" position="replace">
+                    <field name="cpf" readonly="True"/>
+                </field>
+                <field name="otherid" position="replace">
+                    <field name="rg" readonly="True"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_cl_patient_search_l10n_br">
+            <field name="name">cl_patient.filter</field>
+            <field name="model">cl_patient</field>
+            <field name="inherit_id" ref="cl_patient.view_cl_patient_search"/>
+            <field name="arch" type="xml">
+                <field name="patient_code" position="after">
+                    <field name="cpf"/>
+                    <field name="rg"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
